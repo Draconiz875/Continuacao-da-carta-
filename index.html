@@ -4,61 +4,193 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uma surpresa ❤️</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;overflow:hidden;display:flex;justify-content:center;align-items:center;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff758c,#ff7eb3,#c471ed);color:white;text-align:center}
-.card{width:min(90%,650px);padding:45px 30px;border-radius:30px;background:rgba(255,255,255,.15);backdrop-filter:blur(12px);box-shadow:0 20px 60px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.25);position:relative;z-index:2}
-.heart{font-size:64px;animation:pulse 1.2s infinite}
-h1{font-size:clamp(32px,7vw,64px);margin:15px 0;text-shadow:0 4px 15px rgba(0,0,0,.25)}
-p{font-size:20px;line-height:1.5}
-button{border:0;border-radius:999px;padding:16px 30px;font-size:18px;font-weight:bold;cursor:pointer;color:#d6336c;background:white;box-shadow:0 8px 25px rgba(0,0,0,.2);transition:.25s}
-button:hover{transform:scale(1.06)}
-#surpresa{display:none}
-.float{position:fixed;bottom:-50px;font-size:28px;animation:subir linear forwards;opacity:.8}
-@keyframes pulse{50%{transform:scale(1.12)}}
-@keyframes subir{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
-.fade{animation:fade .8s ease}
-@keyframes fade{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#c471ed);
+    color:white;
+    text-align:center;
+}
+
+.card{
+    width:min(90%,650px);
+    padding:45px 30px;
+    border-radius:30px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    border:1px solid rgba(255,255,255,.25);
+    position:relative;
+    z-index:2;
+    margin:20px 0;
+}
+
+.heart{
+    font-size:64px;
+    animation:pulse 1.2s infinite;
+}
+
+h1{
+    font-size:clamp(32px,7vw,64px);
+    margin:15px 0;
+    text-shadow:0 4px 15px rgba(0,0,0,.25);
+}
+
+p{
+    font-size:20px;
+    line-height:1.5;
+}
+
+button{
+    border:0;
+    border-radius:999px;
+    padding:16px 30px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#d6336c;
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.06);
+}
+
+#surpresa{
+    display:none;
+}
+
+.float{
+    position:fixed;
+    bottom:-50px;
+    font-size:28px;
+    animation:subir linear forwards;
+    opacity:.8;
+    z-index:1;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+@keyframes subir{
+    to{
+        transform:translateY(-115vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.fade{
+    animation:fade .8s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
 </style>
 </head>
+
 <body>
+
 <div class="card" id="inicio">
+
 <div class="heart">💌</div>
+
 <h1>Tenho uma coisa pra você...</h1>
-<p>Clica ai pro resto da carta fedooo. </p>
-<button onclick="revelar()">Achou que tudo que eu tinha pra falar pra voçê caberia em uma folha? ❤️</button>
+
+<p>
+Clica ai pro resto da carta fedooo.
+</p>
+
+<button onclick="revelar()">
+Achou que tudo que eu tinha pra falar pra voçê caberia em uma folha? ❤️
+</button>
+
 </div>
 
+
 <div class="card fade" id="surpresa">
+
 <div class="heart">❤️</div>
+
 <h1>EU TE AMO, FEDORENTA!❤️</h1>
-<p>Quero continuar te chamando de fedorenta mesmo quando estivermos velhinhos, continuar implicando com você por absolutamente nada e continuar encontrando motivos idiotas pra te fazer rir. Porque, sinceramente, eu não consigo imaginar minha vida sem essas pequenas coisas que fazem você ser você.
+
+<p>
+Quero continuar te chamando de fedorenta mesmo quando estivermos velhinhos, continuar implicando com você por absolutamente nada e continuar encontrando motivos idiotas pra te fazer rir. Porque, sinceramente, eu não consigo imaginar minha vida sem essas pequenas coisas que fazem você ser você.
 E eu espero que um dia a gente olhe pra trás e perceba que todos aqueles planos que pareciam tão distantes realmente aconteceram. Quero nossa casa, nossas histórias, nossas viagens, nossos momentos e, principalmente, quero que a gente tenha vários patos. Sim, vários. Eu não sei exatamente quantos, mas definitivamente serão mais do que o necessário. 🦆
 Quero que a gente tenha uma vida cheia dessas coisas que talvez pareçam bobas para outras pessoas, mas que tenham significado pra nós. Quero poder olhar pra você e pensar: "é, era exatamente com essa fedorenta que eu queria estar."
 E talvez essa seja uma das coisas mais bonitas sobre amar alguém: não é só querer viver os grandes momentos. É querer dividir também os pequenos. É querer acordar e saber que aquela pessoa está ali, rir das mesmas besteiras, discutir sobre quem está certo sabendo que provavelmente nenhum dos dois vai admitir que está errado e, no final, continuar escolhendo ficar.
 Então, Gabirela, se depender de mim, ainda temos muita história pela frente.
-
 E pode se preparar, porque eu ainda vou te encher muito o saco.
+Te amo, fedorenta.<br>🥹❤️
+</p>
 
-Te amo, fedorenta.<br>. 🥹❤️</p>
-<p><strong>Com amor, seu atencioso namorado Jv. ❤️</strong></p>
+<p>
+<strong>
+Com amor, seu atencioso namorado Jv. ❤️
+</strong>
+</p>
+
 </div>
 
+
 <script>
+
 function revelar(){
+
 document.getElementById("inicio").style.display="none";
+
 document.getElementById("surpresa").style.display="block";
-for(let i=0;i<35;i++) setTimeout(criarCoracao,i*100);
+
+for(let i=0;i<35;i++) 
+    setTimeout(criarCoracao,i*100);
+
 }
+
 function criarCoracao(){
+
 const e=document.createElement("div");
+
 e.className="float";
-e.textContent=["❤️","💕","💖","💗","💘"][Math.floor(Math.random()*5)];
+
+e.textContent=["❤️","💕","💖","💗","💘"]
+[Math.floor(Math.random()*5)];
+
 e.style.left=Math.random()*100+"vw";
+
 e.style.animationDuration=(4+Math.random()*4)+"s";
+
 document.body.appendChild(e);
+
 setTimeout(()=>e.remove(),8500);
+
 }
+
 </script>
+
 </body>
 </html>
