@@ -1,196 +1,395 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uma surpresa ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma surpresa ❤️</title>
 
-<style>
-*{
-    box-sizing:border-box;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body{
-    margin:0;
-    min-height:100vh;
-    overflow-x:hidden;
-    overflow-y:auto;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    padding:40px 0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#ff758c,#ff7eb3,#c471ed);
-    color:white;
-    text-align:center;
-}
+        html {
+            min-height: 100%;
+            overflow-y: auto;
+        }
 
-.card{
-    width:min(90%,650px);
-    padding:45px 30px;
-    border-radius:30px;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(12px);
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-    border:1px solid rgba(255,255,255,.25);
-    position:relative;
-    z-index:2;
-    margin:20px 0;
-}
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #c471ed);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
 
-.heart{
-    font-size:64px;
-    animation:pulse 1.2s infinite;
-}
+        .card {
+            width: min(90vw, 650px);
+            padding: 45px 30px;
+            margin: 20px 0;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            z-index: 2;
+        }
 
-h1{
-    font-size:clamp(32px,7vw,64px);
-    margin:15px 0;
-    text-shadow:0 4px 15px rgba(0,0,0,.25);
-}
+        .heart {
+            font-size: 64px;
+            animation: pulse 1.2s infinite;
+        }
 
-p{
-    font-size:20px;
-    line-height:1.5;
-}
+        h1 {
+            font-size: clamp(32px, 7vw, 64px);
+            margin: 15px 0;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
 
-button{
-    border:0;
-    border-radius:999px;
-    padding:16px 30px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    color:#d6336c;
-    background:white;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
-    transition:.25s;
-}
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 25px 0;
+            overflow-wrap: break-word;
+        }
 
-button:hover{
-    transform:scale(1.06);
-}
+        button {
+            border: 0;
+            border-radius: 999px;
+            padding: 16px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #d6336c;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: 0.25s;
+            max-width: 100%;
+        }
 
-#surpresa{
-    display:none;
-}
+        button:hover {
+            transform: scale(1.06);
+        }
 
-.float{
-    position:fixed;
-    bottom:-50px;
-    font-size:28px;
-    animation:subir linear forwards;
-    opacity:.8;
-    z-index:1;
-}
+        #surpresa {
+            display: none;
+        }
 
-@keyframes pulse{
-    50%{
-        transform:scale(1.12);
-    }
-}
+        .float {
+            position: fixed;
+            bottom: -50px;
+            font-size: 28px;
+            animation: subir linear forwards;
+            opacity: 0.8;
+            z-index: 1;
+            pointer-events: none;
+        }
 
-@keyframes subir{
-    to{
-        transform:translateY(-115vh) rotate(360deg);
-        opacity:0;
-    }
-}
+        .pato {
+            position: fixed;
+            left: -80px;
+            font-size: 35px;
+            z-index: 1;
+            pointer-events: none;
+            animation: nadar linear forwards;
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.15));
+        }
 
-.fade{
-    animation:fade .8s ease;
-}
+        @keyframes nadar {
+            0% {
+                transform: translateX(-100px) translateY(0) rotate(0deg);
+            }
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:scale(.85);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-</style>
+            25% {
+                transform: translateX(25vw) translateY(-12px) rotate(-4deg);
+            }
+
+            50% {
+                transform: translateX(50vw) translateY(8px) rotate(4deg);
+            }
+
+            75% {
+                transform: translateX(75vw) translateY(-8px) rotate(-4deg);
+            }
+
+            100% {
+                transform: translateX(calc(100vw + 150px)) translateY(0) rotate(0deg);
+            }
+        }
+
+        @keyframes pulse {
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        @keyframes subir {
+            to {
+                transform: translateY(-115vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .fade {
+            animation: fade 0.8s ease;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .card {
+                width: 95vw;
+                padding: 35px 20px;
+                margin: 10px 0;
+                border-radius: 25px;
+            }
+
+            .heart {
+                font-size: 52px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+                padding: 15px 20px;
+            }
+
+            .pato {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="card" id="inicio">
+    <div class="card" id="inicio">
 
-<div class="heart">💌</div>
+        <div class="heart">
+            💌
+        </div>
 
-<h1>Tenho uma coisa pra você...</h1>
+        <h1>
+            Tenho uma coisa pra você...
+        </h1>
 
-<p>
-Clica ai pro resto da carta fedooo.
-</p>
+        <p>
+            Clica ai pro resto da carta fedooo.
+        </p>
 
-<button onclick="revelar()">
-Achou que tudo que eu tinha pra falar pra voçê caberia em uma folha? ❤️
-</button>
+        <button onclick="revelar()">
+            Achou que tudo que eu tinha pra falar pra você caberia em uma folha? ❤️
+        </button>
 
-</div>
+    </div>
 
+    <div class="card fade" id="surpresa">
 
-<div class="card fade" id="surpresa">
+        <div class="heart">
+            ❤️
+        </div>
 
-<div class="heart">❤️</div>
+        <h1>
+            EU TE AMO, FEDORENTA! ❤️
+        </h1>
 
-<h1>EU TE AMO, FEDORENTA!❤️</h1>
+        <p>
+            Quero continuar te chamando de fedorenta mesmo quando estivermos
+            velhinhos, continuar implicando com você por absolutamente nada e
+            continuar encontrando motivos idiotas pra te fazer rir.
+        </p>
 
-<p>
-Quero continuar te chamando de fedorenta mesmo quando estivermos velhinhos, continuar implicando com você por absolutamente nada e continuar encontrando motivos idiotas pra te fazer rir. Porque, sinceramente, eu não consigo imaginar minha vida sem essas pequenas coisas que fazem você ser você.
-E eu espero que um dia a gente olhe pra trás e perceba que todos aqueles planos que pareciam tão distantes realmente aconteceram. Quero nossa casa, nossas histórias, nossas viagens, nossos momentos e, principalmente, quero que a gente tenha vários patos. Sim, vários. Eu não sei exatamente quantos, mas definitivamente serão mais do que o necessário. 🦆
-Quero que a gente tenha uma vida cheia dessas coisas que talvez pareçam bobas para outras pessoas, mas que tenham significado pra nós. Quero poder olhar pra você e pensar: "é, era exatamente com essa fedorenta que eu queria estar."
-E talvez essa seja uma das coisas mais bonitas sobre amar alguém: não é só querer viver os grandes momentos. É querer dividir também os pequenos. É querer acordar e saber que aquela pessoa está ali, rir das mesmas besteiras, discutir sobre quem está certo sabendo que provavelmente nenhum dos dois vai admitir que está errado e, no final, continuar escolhendo ficar.
-Então, Gabirela, se depender de mim, ainda temos muita história pela frente.
-E pode se preparar, porque eu ainda vou te encher muito o saco.
-Te amo, fedorenta.<br>🥹❤️
-</p>
+        <p>
+            Porque, sinceramente, eu não consigo imaginar minha vida sem essas
+            pequenas coisas que fazem você ser você.
+        </p>
 
-<p>
-<strong>
-Com amor, seu atencioso namorado Jv. ❤️
-</strong>
-</p>
+        <p>
+            E eu espero que um dia a gente olhe pra trás e perceba que todos
+            aqueles planos que pareciam tão distantes realmente aconteceram.
+        </p>
 
-</div>
+        <p>
+            Quero nossa casa, nossas histórias, nossas viagens, nossos momentos
+            e, principalmente, quero que a gente tenha vários patos.
+        </p>
 
+        <p>
+            Sim, vários.
+        </p>
 
-<script>
+        <p>
+            Eu não sei exatamente quantos, mas definitivamente serão mais do que
+            o necessário. 🦆
+        </p>
 
-function revelar(){
+        <p>
+            Quero que a gente tenha uma vida cheia dessas coisas que talvez
+            pareçam bobas para outras pessoas, mas que tenham significado pra nós.
+        </p>
 
-document.getElementById("inicio").style.display="none";
+        <p>
+            Quero poder olhar pra você e pensar:
+        </p>
 
-document.getElementById("surpresa").style.display="block";
+        <p>
+            <strong>
+                "É, era exatamente com essa fedorenta que eu queria estar."
+            </strong>
+        </p>
 
-for(let i=0;i<35;i++) 
-    setTimeout(criarCoracao,i*100);
+        <p>
+            E talvez essa seja uma das coisas mais bonitas sobre amar alguém:
+        </p>
 
-}
+        <p>
+            Não é só querer viver os grandes momentos.
+        </p>
 
-function criarCoracao(){
+        <p>
+            É querer dividir também os pequenos.
+        </p>
 
-const e=document.createElement("div");
+        <p>
+            É querer acordar e saber que aquela pessoa está ali, rir das mesmas
+            besteiras, discutir sobre quem está certo sabendo que provavelmente
+            nenhum dos dois vai admitir que está errado e, no final, continuar
+            escolhendo ficar.
+        </p>
 
-e.className="float";
+        <p>
+            Então, Gabirela, se depender de mim, ainda temos muita história pela frente.
+        </p>
 
-e.textContent=["❤️","💕","💖","💗","💘"]
-[Math.floor(Math.random()*5)];
+        <p>
+            E pode se preparar, porque eu ainda vou te encher muito o saco.
+        </p>
 
-e.style.left=Math.random()*100+"vw";
+        <p>
+            Te amo, fedorenta.
+            <br>
+            🥹❤️
+        </p>
 
-e.style.animationDuration=(4+Math.random()*4)+"s";
+        <p>
+            <strong>
+                Com amor, Eu né quem mais poderia ser 🤨🙄. ❤️
+            </strong>
+        </p>
 
-document.body.appendChild(e);
+    </div>
 
-setTimeout(()=>e.remove(),8500);
+    <script>
+        function revelar() {
 
-}
+            const inicio = document.getElementById("inicio");
+            const surpresa = document.getElementById("surpresa");
 
-</script>
+            inicio.style.display = "none";
+            surpresa.style.display = "block";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            for (let i = 0; i < 35; i++) {
+                setTimeout(criarCoracao, i * 100);
+            }
+
+            for (let i = 0; i < 8; i++) {
+                setTimeout(criarPato, i * 1200);
+            }
+        }
+
+        function criarCoracao() {
+
+            const coracao = document.createElement("div");
+
+            coracao.className = "float";
+
+            const coracoes = [
+                "❤️",
+                "💕",
+                "💖",
+                "💗",
+                "💘"
+            ];
+
+            coracao.textContent =
+                coracoes[Math.floor(Math.random() * coracoes.length)];
+
+            coracao.style.left =
+                Math.random() * 100 + "vw";
+
+            coracao.style.animationDuration =
+                (4 + Math.random() * 4) + "s";
+
+            document.body.appendChild(coracao);
+
+            setTimeout(() => {
+                coracao.remove();
+            }, 8500);
+        }
+
+        function criarPato() {
+
+            const pato = document.createElement("div");
+
+            pato.className = "pato";
+
+            pato.textContent = "🦆";
+
+            pato.style.top =
+                (15 + Math.random() * 70) + "vh";
+
+            pato.style.fontSize =
+                (25 + Math.random() * 25) + "px";
+
+            pato.style.animationDuration =
+                (8 + Math.random() * 8) + "s";
+
+            document.body.appendChild(pato);
+
+            setTimeout(() => {
+                pato.remove();
+            }, 17000);
+        }
+    </script>
 
 </body>
+
 </html>
